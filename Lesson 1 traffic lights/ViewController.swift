@@ -27,14 +27,24 @@ class ViewController: UIViewController {
     }
 
     @IBAction func toggelTextButtonPressed() {
-        if redColorView.alpha < 0 {
+        if redColorView.alpha < 1 && greenColorView.alpha < 1 && yellowColorView.alpha < 1 {
+            redColorView.alpha = 1
+        } else if redColorView.alpha == 1 {
+            redColorView.alpha = 0.3
+            yellowColorView.alpha = 1
+        } else if yellowColorView.alpha == 1 {
+            yellowColorView.alpha = 0.3
+            greenColorView.alpha = 1
+        } else if greenColorView.alpha == 1 {
+            greenColorView.alpha = 0.3
             redColorView.alpha = 1
         }
-            toggleTextButton.setTitle("Next", for: .normal)
+          
         
+            toggleTextButton.setTitle("Next", for: .normal)
         }
+
 }
-    
 
 
 
